@@ -21,8 +21,9 @@ const CreateJob = () => {
              console.log(result)
              if(result.acknowledged===true){
                 alert("JOB posted successfully")
-                reset();
+                
              }
+             reset();
         })
         console.log(response);
     };
