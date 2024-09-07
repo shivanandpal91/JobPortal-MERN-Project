@@ -12,13 +12,17 @@ const router = createBrowserRouter([
       path: "/",
       element: <App />,
       children: [
-        { path: "/",element: <Home />},
+        { path: "/",element: <Login />},
+        { path: "/home", element: <Home /> }, 
         { path: "/post-job",element: <CreateJob />},
         { path: "/my-job",element: <MyJobs />},
         { path: "/salary",element: <SalaryPage />},
         { path: "/edit-job/:id",element: <UpdateJob />,loader:({params})=>fetch(`http://localhost:3000/alljobs/${params.id}`) },
-        { path: "/Login",element: <Login />},
       ]
+    },
+    {
+       path: "/login",element: <Login />
     }
+    
   ]);
   export default router;

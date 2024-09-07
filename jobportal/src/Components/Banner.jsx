@@ -10,9 +10,9 @@ const Banner = (props) => {
 
   return (
   
-    <div className="max-w-screen-2xl container mx-auto xl:px-24 px-4 md:py-20 py-14">
-          <h1 className='text-5xl font-bold text-primary mb-3'>Find Your <span className="text-blue-400">new</span> Job now </h1>
-          <p className="mb-8 text-black ">Explore jobs in IT sector in Latest Technology</p>
+    <div className="max-w-screen-2xl container mx-auto xl:px-24 px-4 md:py-20 py-14 bg-slate-100">
+          <h1 className='text-5xl font-bold text-primary mb-3'>Search Your <span className="text-blue-400">new</span> Job now </h1>
+          <p className="mb-8 text-black ">Explore jobs "Latest Technology" in IT sector </p>
 
           <form>
             < div className="flex justify-start md: flex-row md:gap-0 gap-4 ">

@@ -35,7 +35,7 @@ const Navbar = () => {
             </ul>
             <div className= " gap-2 m-5 hidden lg:block">
                 <Link to="/login" className="py-2 px-5 rounded-sm m-5 bg-blue-500 text-white" >Log In </Link>
-                <Link to="/sign-up" className="py-2 px-5 m-5 rounded-sm bg-blue-500 text-white" >Sign Up </Link>
+                {/* <Link to="/sign-up" className="py-2 px-5 m-5 rounded-sm bg-blue-500 text-white" >Sign Up </Link> */}
             </div>
             {/* for mobile view */}
             <div className=" md:hidden block">

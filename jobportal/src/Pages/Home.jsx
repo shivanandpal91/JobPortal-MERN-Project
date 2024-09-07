@@ -54,6 +54,7 @@ const handleChange=(event)=>{
 const handleClick=(event)=>{
   setSelectedCategory(event.target.value)
 }
+// console.log(selectedCategory);
 
 
 
@@ -128,7 +129,7 @@ const result=filteredData(jobs,selectedCategory,query)
     <div>
       <Banner query={query} handleInputChanger={handleInputChanger}/>
       {/*main contents*/ }
-      <div className="bg-yellow-300 md:grid grid-cols-4 gap-8 lg:px-24 px-4 py-12">
+      <div className="bg-lime-200 md:grid grid-cols-4 gap-8 lg:px-24 px-4 py-12">
         <div className="bg-white p-4 rounded"><SideBar  handleChange={handleChange} handleClick={handleClick}/></div>
         <div className="col-span-2 bg-white p-4 rounded">
            {

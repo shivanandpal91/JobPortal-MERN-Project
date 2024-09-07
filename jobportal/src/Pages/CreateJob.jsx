@@ -45,7 +45,7 @@ const CreateJob = () => {
   
     return (
     <div className="mac-w-screen-2xl container mx-auto xl:px-24 px-4">
-        <div className='bg-yellow-300 py-10 px-4 lg:px-16'>
+        <div className='bg-slate-300 py-10 px-4 lg:px-16'>
         {/* form*/ }
             <form onSubmit={handleSubmit(onSubmit)} className='space-y-5'>
             {/*first row */}
@@ -153,7 +153,7 @@ const CreateJob = () => {
                 <input type='email' placeholder=' your email:abcxyz123@gmail.com ' {...register("postedBy")} className='create-job-input'></input>
             </div>
 
-            <input type="submit" className='block mt-12 bg-blue-300 text-white font-semibold px-8 py-2 rounded-sm cursor-pointer'/>
+            <input type="submit" className='block mt-12 bg-blue-700 text-white font-semibold px-8 py-2 rounded-sm cursor-pointer'/>
             </form>
         </div>
     </div>

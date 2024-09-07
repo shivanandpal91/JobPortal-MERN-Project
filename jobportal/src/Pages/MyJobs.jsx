@@ -13,8 +13,8 @@ const MyJobs = () => {
   const itemsPerPage =4;
   useEffect(() =>{
       setIsLoading(true);
-      fetch("http://localhost:3000/myJobs/abc@gmail.com")
-      // fetch("jobs.json/")
+      // fetch("http://localhost:3000/myJobs/abc@gmail.com")
+      fetch("../public/jobs.json")
       .then(res=>res.json())
       .then(data=>{setJobs(data);
         setIsLoading(false);
@@ -70,7 +70,7 @@ let prevPage=()=>{
  }
 
   return (
-    <div className="max-w-screen-2xl container mx-auto xl:px-24 px-4">
+    <div className="max-w-screen-2xl bg-slate-200 container mx-auto xl:px-24 px-4">
       <div className='my-jobs-container'>
          <h1 className='text-center p-4'>All Jobs Posted By Me</h1>
           <div className='search-box p-2 text-center mb-2 '>

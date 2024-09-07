@@ -24,7 +24,7 @@ const NewsLetter = () => {
                 Get Noticed Faster
             </h3>
             
-                <p className='flex text-primary/75 text-base mb-4'>ksfdhbiawjhbianeisjviabdivbeisbvi</p>
+                <p className='flex text-primary/75 text-base mb-4'>address</p>
                 <div>
                     <input type="email" name='email' id='email' placeholder='email123@gmail.com'
                       className=' w-full block py-2 pl-3 border focus:outline-none'/>
