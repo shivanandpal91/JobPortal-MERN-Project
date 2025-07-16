@@ -33,7 +33,7 @@ const CreateJob = () => {
       const onSubmit = async (data) => {
         data.skills=selectedOption;
         console.log(data)
-        const response=await fetch("http://localhost:8080/post-job",{
+        const response=await fetch("https://job-portal-server-api.vercel.app/post-job",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(data)
