@@ -31,7 +31,7 @@ function ProfileNew() {
 
   const fetchUserProfile = async () => {
     try {
-      const res = await fetch(`http://localhost:8080/user/${userEmail}`, {
+      const res = await fetch(`https://job-portal-server-api.vercel.app/user/${userEmail}`, {
         headers: {
           Authorization: token,
         },
@@ -70,7 +70,7 @@ function ProfileNew() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch(`http://localhost:8080/user/${user._id}`, {
+    const res = await fetch(`https://job-portal-server-api.vercel.app/user/${user._id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
