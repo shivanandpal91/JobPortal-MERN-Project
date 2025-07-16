@@ -80,7 +80,7 @@ const [selectedSalaryType, setSelectedSalaryType] = useState('');
 
   useEffect(() => {
     setIsLoading(true);
-    fetch('http://localhost:8080/alljobs')
+    fetch('https://job-portal-server-api.vercel.app/alljobs')
       .then((res) => res.json())
       .then((data) => {
         setJobs(data);

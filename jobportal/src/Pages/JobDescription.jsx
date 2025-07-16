@@ -106,7 +106,7 @@ function JobDescription() {
   useEffect(() => {
     const checkIfApplied = async () => {
       try {
-        const res = await fetch(`http://localhost:8080/user/${userEmail}`, {
+        const res = await fetch(`https://job-portal-server-api.vercel.app/user/${userEmail}`, {
           headers: { Authorization: token },
         });
         const data = await res.json();
@@ -134,7 +134,7 @@ function JobDescription() {
         jobTitle: job.jobTitle,
         companyName: job.companyName,
       };
-      const res =await fetch(`http://localhost:8080/user/apply/${userEmail}`, {
+      const res =await fetch(`https://job-portal-server-api.vercel.app/user/apply/${userEmail}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
