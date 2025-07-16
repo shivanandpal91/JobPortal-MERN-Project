@@ -1,65 +1,1288 @@
 [
-    {
-        "id": 1,
-        "title": "Warehouse Associate",
-        "salary": "Average Salary $34,331 per year",
-        "status": "Job Openings",
-        "skills": "Skills"
-    },
-    {
-        "id": 2,
-        "title": "Backend Developer",
-        "salary": "Average Salary $46,052 per year",
-        "status": "Job Openings",
-        "skills": "Skills"
-    },
-    {
-        "id": 3,
-        "title": "Front Desk Agent",
-        "salary": "Average Salary $43,402 per year",
-        "status": "Job Openings",
-        "skills": "Skills"
-    },
-    {
-        "id": 4,
-        "title": "Crew Member",
-        "salary": "Average Salary $44,781 per year",
-        "status": "Job Openings",
-        "skills": "Skills"
-    },
-    {
-        "id": 5,
-        "title": "Software Engineer",
-        "salary": "Average Salary $102,781 per year",
-        "status": "Job Openings",
-        "skills": "Skills"
-    },
-    {
-        "id": 6,
-        "title": "App Developer",
-        "salary": "Average Salary $92,781 per year",
-        "status": "Job Openings",
-        "skills": "Skills"
-    },
-    {
-        "id": 7,
-        "title": "UI/UX Designer",
-        "salary": "Average Salary $108,781 per year",
-        "status": "Job Openings",
-        "skills": "Skills"
-    },
-    {
-        "id": 8,
-        "title": "Web Developer",
-        "salary": "Average Salary $88,601 per year",
-        "status": "Job Openings",
-        "skills": "Skills"
-    },
-    {
-        "id": 9,
-        "title": "Full Stack Developer",
-        "salary": "Average Salary $88,601 per year",
-        "status": "Job Openings",
-        "skills": "Skills"
-    }
+  {
+    "id": 1,
+    "title": "Software Engineer",
+    "salary": "₹10 LPA - ₹30 LPA",
+    "location": "Bangalore, India",
+    "skills": ["JavaScript", "React", "Node.js"],
+    "status": "Trending"
+  },
+  {
+    "id": 2,
+    "title": "Data Scientist",
+    "salary": "₹18 LPA - ₹35 LPA",
+    "location": "Hyderabad, India",
+    "skills": ["Python", "Machine Learning", "SQL"],
+    "status": "High Demand"
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Designer",
+    "salary": "₹7 LPA - ₹15 LPA",
+    "location": "Mumbai, India",
+    "skills": ["Figma", "Adobe XD", "Prototyping"],
+    "status": "Popular"
+  },
+  {
+    "id": 4,
+    "title": "Cloud Solutions Architect",
+    "salary": "$110,000 - $150,000 per year",
+    "location": "San Francisco, USA",
+    "skills": ["AWS", "Kubernetes", "Terraform"],
+    "status": "Top Tier"
+  },
+  {
+    "id": 5,
+    "title": "DevOps Engineer",
+    "salary": "₹12 LPA - ₹20 LPA",
+    "location": "Pune, India",
+    "skills": ["CI/CD", "Docker", "Linux"],
+    "status": "Emerging"
+  },
+  {
+    "id": 6,
+    "title": "Mobile App Developer",
+    "salary": "$90,000 - $130,000 per year",
+    "location": "Berlin, Germany",
+    "skills": ["Flutter", "Swift", "Kotlin"],
+    "status": "In Demand"
+  },
+  {
+    "id": 7,
+    "title": "Product Manager",
+    "salary": "\u20b92816727 per year",
+    "location": "Dubai, UAE",
+    "status": "Job Openings",
+    "skills": [
+      "HTML",
+      "Docker",
+      "Express.js",
+      "MongoDB"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Software Engineer",
+    "salary": "\u20b94088531 per year",
+    "location": "Singapore",
+    "status": "Job Openings",
+    "skills": [
+      "TensorFlow",
+      "Python"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Cloud Architect",
+    "salary": "\u20b92149365 per year",
+    "location": "Pune, India",
+    "status": "Job Openings",
+    "skills": [
+      "GCP",
+      "Node.js",
+      "React",
+      "Kubernetes",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Game Developer",
+    "salary": "\u20b91334323 per year",
+    "location": "Bangalore, India",
+    "status": "Job Openings",
+    "skills": [
+      "Linux",
+      "TensorFlow",
+      "SQL",
+      "MongoDB",
+      "TypeScript"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "System Administrator",
+    "salary": "\u20b94242710 per year",
+    "location": "Mumbai, India",
+    "status": "Job Openings",
+    "skills": [
+      "SQL",
+      "Node.js",
+      "Docker"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "DevOps Engineer",
+    "salary": "\u20b92861311 per year",
+    "location": "London, UK",
+    "status": "Job Openings",
+    "skills": [
+      "Docker",
+      "Flutter"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Frontend Developer",
+    "salary": "\u20b92803166 per year",
+    "location": "Tokyo, Japan",
+    "status": "Job Openings",
+    "skills": [
+      "Azure",
+      "Figma",
+      "Kubernetes",
+      "CSS"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Cloud Architect",
+    "salary": "\u20b94442186 per year",
+    "location": "Berlin, Germany",
+    "status": "Job Openings",
+    "skills": [
+      "Python",
+      "GCP",
+      "Docker",
+      "Flutter"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Game Developer",
+    "salary": "\u20b91082213 per year",
+    "location": "Delhi, India",
+    "status": "Job Openings",
+    "skills": [
+      "Docker",
+      "MongoDB",
+      "CI/CD",
+      "Linux"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Product Manager",
+    "salary": "\u20b91179924 per year",
+    "location": "Dubai, UAE",
+    "status": "Job Openings",
+    "skills": [
+      "Python",
+      "Node.js",
+      "Kubernetes",
+      "Figma"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Network Engineer",
+    "salary": "\u20b91228099 per year",
+    "location": "Tokyo, Japan",
+    "status": "Job Openings",
+    "skills": [
+      "SQL",
+      "Linux",
+      "MongoDB"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Blockchain Developer",
+    "salary": "\u20b91991594 per year",
+    "location": "Bangalore, India",
+    "status": "Job Openings",
+    "skills": [
+      "Express.js",
+      "Figma",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "UI/UX Designer",
+    "salary": "\u20b91158718 per year",
+    "location": "Delhi, India",
+    "status": "Job Openings",
+    "skills": [
+      "Node.js",
+      "Docker"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Technical Writer",
+    "salary": "\u20b9878397 per year",
+    "location": "Mumbai, India",
+    "status": "Job Openings",
+    "skills": [
+      "CSS",
+      "Node.js",
+      "Express.js",
+      "React"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Full Stack Developer",
+    "salary": "\u20b92666628 per year",
+    "location": "Singapore",
+    "status": "Job Openings",
+    "skills": [
+      "MongoDB",
+      "Python"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "DevOps Engineer",
+    "salary": "\u20b92820368 per year",
+    "location": "Hyderabad, India",
+    "status": "Job Openings",
+    "skills": [
+      "MongoDB",
+      "AWS",
+      "Azure",
+      "Docker",
+      "React"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Product Manager",
+    "salary": "\u20b91852016 per year",
+    "location": "New York, USA",
+    "status": "Job Openings",
+    "skills": [
+      "TensorFlow",
+      "AWS",
+      "Python",
+      "Kubernetes"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Software Engineer",
+    "salary": "\u20b9332426 per year",
+    "location": "Amsterdam, Netherlands",
+    "status": "Job Openings",
+    "skills": [
+      "CI/CD",
+      "TypeScript",
+      "AWS",
+      "CSS",
+      "Figma"
+    ]
+  },
+  {
+    "id": 25,
+    "title": "Software Engineer",
+    "salary": "\u20b91611379 per year",
+    "location": "Dubai, UAE",
+    "status": "Job Openings",
+    "skills": [
+      "SQL",
+      "Node.js",
+      "Docker"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Mobile App Developer",
+    "salary": "\u20b92425484 per year",
+    "location": "Berlin, Germany",
+    "status": "Job Openings",
+    "skills": [
+      "AWS",
+      "Figma",
+      "CSS"
+    ]
+  },
+  {
+    "id": 27,
+    "title": "Product Manager",
+    "salary": "\u20b91112550 per year",
+    "location": "Hyderabad, India",
+    "status": "Job Openings",
+    "skills": [
+      "SQL",
+      "GCP",
+      "Azure",
+      "React"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "Blockchain Developer",
+    "salary": "\u20b92552386 per year",
+    "location": "Pune, India",
+    "status": "Job Openings",
+    "skills": [
+      "Python",
+      "Kubernetes",
+      "TensorFlow",
+      "Figma",
+      "SQL"
+    ]
+  },
+  {
+    "id": 29,
+    "title": "Software Engineer",
+    "salary": "\u20b92949709 per year",
+    "location": "New York, USA",
+    "status": "Job Openings",
+    "skills": [
+      "TypeScript",
+      "TensorFlow"
+    ]
+  },
+  {
+    "id": 30,
+    "title": "IT Support Specialist",
+    "salary": "\u20b9638540 per year",
+    "location": "San Francisco, USA",
+    "status": "Job Openings",
+    "skills": [
+      "Linux",
+      "Docker",
+      "AWS",
+      "SQL"
+    ]
+  },
+  {
+    "id": 31,
+    "title": "Software Engineer",
+    "salary": "\u20b9740837 per year",
+    "location": "Mumbai, India",
+    "status": "Job Openings",
+    "skills": [
+      "Linux",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 32,
+    "title": "Cybersecurity Analyst",
+    "salary": "\u20b93270362 per year",
+    "location": "Toronto, Canada",
+    "status": "Job Openings",
+    "skills": [
+      "MongoDB",
+      "GCP",
+      "CSS",
+      "Figma"
+    ]
+  },
+  {
+    "id": 33,
+    "title": "Product Manager",
+    "salary": "\u20b9521823 per year",
+    "location": "Toronto, Canada",
+    "status": "Job Openings",
+    "skills": [
+      "CSS",
+      "Express.js",
+      "TensorFlow",
+      "Python"
+    ]
+  },
+  {
+    "id": 34,
+    "title": "IT Support Specialist",
+    "salary": "\u20b92764563 per year",
+    "location": "Toronto, Canada",
+    "status": "Job Openings",
+    "skills": [
+      "TypeScript",
+      "HTML",
+      "MongoDB"
+    ]
+  },
+  {
+    "id": 35,
+    "title": "DevOps Engineer",
+    "salary": "\u20b94342292 per year",
+    "location": "Singapore",
+    "status": "Job Openings",
+    "skills": [
+      "MongoDB",
+      "TensorFlow",
+      "React",
+      "HTML",
+      "Express.js"
+    ]
+  },
+  {
+    "id": 36,
+    "title": "Cybersecurity Analyst",
+    "salary": "\u20b93343069 per year",
+    "location": "Sydney, Australia",
+    "status": "Job Openings",
+    "skills": [
+      "Flutter",
+      "SQL",
+      "GCP",
+      "AWS"
+    ]
+  },
+  {
+    "id": 37,
+    "title": "UI/UX Designer",
+    "salary": "\u20b94087999 per year",
+    "location": "Hyderabad, India",
+    "status": "Job Openings",
+    "skills": [
+      "CSS",
+      "TypeScript",
+      "Kubernetes"
+    ]
+  },
+  {
+    "id": 38,
+    "title": "DevOps Engineer",
+    "salary": "\u20b91617609 per year",
+    "location": "Tokyo, Japan",
+    "status": "Job Openings",
+    "skills": [
+      "CSS",
+      "Figma",
+      "MongoDB"
+    ]
+  },
+  {
+    "id": 39,
+    "title": "Backend Developer",
+    "salary": "\u20b92421666 per year",
+    "location": "Tokyo, Japan",
+    "status": "Job Openings",
+    "skills": [
+      "Linux",
+      "Docker",
+      "GCP"
+    ]
+  },
+  {
+    "id": 40,
+    "title": "Cloud Architect",
+    "salary": "\u20b92999920 per year",
+    "location": "Tokyo, Japan",
+    "status": "Job Openings",
+    "skills": [
+      "Flutter",
+      "Linux",
+      "HTML",
+      "AWS",
+      "TypeScript"
+    ]
+  },
+  {
+    "id": 41,
+    "title": "Frontend Developer",
+    "salary": "\u20b91413293 per year",
+    "location": "Bangalore, India",
+    "status": "Job Openings",
+    "skills": [
+      "CI/CD",
+      "MongoDB"
+    ]
+  },
+  {
+    "id": 42,
+    "title": "Software Engineer",
+    "salary": "\u20b92519394 per year",
+    "location": "Hyderabad, India",
+    "status": "Job Openings",
+    "skills": [
+      "Node.js",
+      "CI/CD"
+    ]
+  },
+  {
+    "id": 43,
+    "title": "Mobile App Developer",
+    "salary": "\u20b91188203 per year",
+    "location": "Toronto, Canada",
+    "status": "Job Openings",
+    "skills": [
+      "Docker",
+      "Linux"
+    ]
+  },
+  {
+    "id": 44,
+    "title": "Data Scientist",
+    "salary": "\u20b94003581 per year",
+    "location": "Sydney, Australia",
+    "status": "Job Openings",
+    "skills": [
+      "TensorFlow",
+      "Figma",
+      "Flutter",
+      "GCP"
+    ]
+  },
+  {
+    "id": 45,
+    "title": "Frontend Developer",
+    "salary": "\u20b92663335 per year",
+    "location": "Singapore",
+    "status": "Job Openings",
+    "skills": [
+      "JavaScript",
+      "Docker",
+      "HTML",
+      "Kubernetes",
+      "Node.js"
+    ]
+  },
+  {
+    "id": 46,
+    "title": "Full Stack Developer",
+    "salary": "\u20b93985545 per year",
+    "location": "London, UK",
+    "status": "Job Openings",
+    "skills": [
+      "CSS",
+      "Express.js",
+      "Kubernetes"
+    ]
+  },
+  {
+    "id": 47,
+    "title": "Cloud Architect",
+    "salary": "\u20b9516082 per year",
+    "location": "San Francisco, USA",
+    "status": "Job Openings",
+    "skills": [
+      "React",
+      "TypeScript"
+    ]
+  },
+  {
+    "id": 48,
+    "title": "Backend Developer",
+    "salary": "\u20b93643438 per year",
+    "location": "New York, USA",
+    "status": "Job Openings",
+    "skills": [
+      "Azure",
+      "Flutter",
+      "React"
+    ]
+  },
+  {
+    "id": 49,
+    "title": "Full Stack Developer",
+    "salary": "\u20b93439992 per year",
+    "location": "Mumbai, India",
+    "status": "Job Openings",
+    "skills": [
+      "GCP",
+      "HTML",
+      "Figma",
+      "JavaScript",
+      "Linux"
+    ]
+  },
+  {
+    "id": 50,
+    "title": "Cybersecurity Analyst",
+    "salary": "\u20b94223735 per year",
+    "location": "Toronto, Canada",
+    "status": "Job Openings",
+    "skills": [
+      "TensorFlow",
+      "Figma"
+    ]
+  },
+  {
+    "id": 51,
+    "title": "Software Engineer",
+    "salary": "\u20b92046848 per year",
+    "location": "Mumbai, India",
+    "status": "Job Openings",
+    "skills": [
+      "Node.js",
+      "Figma"
+    ]
+  },
+  {
+    "id": 52,
+    "title": "Mobile App Developer",
+    "salary": "\u20b94123449 per year",
+    "location": "Pune, India",
+    "status": "Job Openings",
+    "skills": [
+      "Docker",
+      "Figma",
+      "CI/CD"
+    ]
+  },
+  {
+    "id": 53,
+    "title": "Data Scientist",
+    "salary": "\u20b9467244 per year",
+    "location": "New York, USA",
+    "status": "Job Openings",
+    "skills": [
+      "AWS",
+      "SQL",
+      "HTML"
+    ]
+  },
+  {
+    "id": 54,
+    "title": "Game Developer",
+    "salary": "\u20b92992071 per year",
+    "location": "San Francisco, USA",
+    "status": "Job Openings",
+    "skills": [
+      "Python",
+      "React",
+      "SQL",
+      "TypeScript"
+    ]
+  },
+  {
+    "id": 55,
+    "title": "Full Stack Developer",
+    "salary": "\u20b91837746 per year",
+    "location": "Toronto, Canada",
+    "status": "Job Openings",
+    "skills": [
+      "GCP",
+      "AWS"
+    ]
+  },
+  {
+    "id": 56,
+    "title": "UI/UX Designer",
+    "salary": "\u20b93078121 per year",
+    "location": "Amsterdam, Netherlands",
+    "status": "Job Openings",
+    "skills": [
+      "TypeScript",
+      "React",
+      "MongoDB"
+    ]
+  },
+  {
+    "id": 57,
+    "title": "Frontend Developer",
+    "salary": "\u20b92958530 per year",
+    "location": "Berlin, Germany",
+    "status": "Job Openings",
+    "skills": [
+      "Figma",
+      "AWS",
+      "HTML"
+    ]
+  },
+  {
+    "id": 58,
+    "title": "Game Developer",
+    "salary": "\u20b91793825 per year",
+    "location": "Sydney, Australia",
+    "status": "Job Openings",
+    "skills": [
+      "TensorFlow",
+      "Python",
+      "React"
+    ]
+  },
+  {
+    "id": 59,
+    "title": "Frontend Developer",
+    "salary": "\u20b91049783 per year",
+    "location": "Sydney, Australia",
+    "status": "Job Openings",
+    "skills": [
+      "JavaScript",
+      "HTML",
+      "MongoDB",
+      "Node.js"
+    ]
+  },
+  {
+    "id": 60,
+    "title": "Site Reliability Engineer",
+    "salary": "\u20b91935889 per year",
+    "location": "Hyderabad, India",
+    "status": "Job Openings",
+    "skills": [
+      "JavaScript",
+      "Docker"
+    ]
+  },
+  {
+    "id": 61,
+    "title": "System Administrator",
+    "salary": "\u20b93593513 per year",
+    "location": "Mumbai, India",
+    "status": "Job Openings",
+    "skills": [
+      "CI/CD",
+      "TypeScript",
+      "Python",
+      "Express.js",
+      "Flutter"
+    ]
+  },
+  {
+    "id": 62,
+    "title": "System Administrator",
+    "salary": "\u20b9661143 per year",
+    "location": "Hyderabad, India",
+    "status": "Job Openings",
+    "skills": [
+      "Figma",
+      "MongoDB"
+    ]
+  },
+  {
+    "id": 63,
+    "title": "IT Support Specialist",
+    "salary": "\u20b9432441 per year",
+    "location": "Berlin, Germany",
+    "status": "Job Openings",
+    "skills": [
+      "Kubernetes",
+      "GCP"
+    ]
+  },
+  {
+    "id": 64,
+    "title": "Network Engineer",
+    "salary": "\u20b9638757 per year",
+    "location": "Amsterdam, Netherlands",
+    "status": "Job Openings",
+    "skills": [
+      "Python",
+      "Express.js",
+      "JavaScript",
+      "Linux",
+      "MongoDB"
+    ]
+  },
+  {
+    "id": 65,
+    "title": "Full Stack Developer",
+    "salary": "\u20b92214921 per year",
+    "location": "Dubai, UAE",
+    "status": "Job Openings",
+    "skills": [
+      "TensorFlow",
+      "CSS",
+      "MongoDB"
+    ]
+  },
+  {
+    "id": 66,
+    "title": "Blockchain Developer",
+    "salary": "\u20b9908881 per year",
+    "location": "Singapore",
+    "status": "Job Openings",
+    "skills": [
+      "Express.js",
+      "Linux"
+    ]
+  },
+  {
+    "id": 67,
+    "title": "Cloud Architect",
+    "salary": "\u20b9366122 per year",
+    "location": "Berlin, Germany",
+    "status": "Job Openings",
+    "skills": [
+      "CI/CD",
+      "MongoDB",
+      "Express.js"
+    ]
+  },
+  {
+    "id": 68,
+    "title": "AI/ML Engineer",
+    "salary": "\u20b92182551 per year",
+    "location": "Toronto, Canada",
+    "status": "Job Openings",
+    "skills": [
+      "MongoDB",
+      "HTML"
+    ]
+  },
+  {
+    "id": 69,
+    "title": "DevOps Engineer",
+    "salary": "\u20b91203096 per year",
+    "location": "Mumbai, India",
+    "status": "Job Openings",
+    "skills": [
+      "Python",
+      "AWS",
+      "Node.js",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 70,
+    "title": "Software Engineer",
+    "salary": "\u20b93782724 per year",
+    "location": "Mumbai, India",
+    "status": "Job Openings",
+    "skills": [
+      "CI/CD",
+      "HTML"
+    ]
+  },
+  {
+    "id": 71,
+    "title": "DevOps Engineer",
+    "salary": "\u20b93924730 per year",
+    "location": "Sydney, Australia",
+    "status": "Job Openings",
+    "skills": [
+      "Node.js",
+      "Linux",
+      "GCP",
+      "AWS",
+      "Python"
+    ]
+  },
+  {
+    "id": 72,
+    "title": "UI/UX Designer",
+    "salary": "\u20b92070463 per year",
+    "location": "Singapore",
+    "status": "Job Openings",
+    "skills": [
+      "Python",
+      "TensorFlow",
+      "HTML",
+      "React",
+      "SQL"
+    ]
+  },
+  {
+    "id": 73,
+    "title": "Technical Writer",
+    "salary": "\u20b9811588 per year",
+    "location": "Berlin, Germany",
+    "status": "Job Openings",
+    "skills": [
+      "HTML",
+      "SQL",
+      "Figma"
+    ]
+  },
+  {
+    "id": 74,
+    "title": "UI/UX Designer",
+    "salary": "\u20b91539008 per year",
+    "location": "Sydney, Australia",
+    "status": "Job Openings",
+    "skills": [
+      "GCP",
+      "Flutter",
+      "CSS"
+    ]
+  },
+  {
+    "id": 75,
+    "title": "IT Support Specialist",
+    "salary": "\u20b93792942 per year",
+    "location": "San Francisco, USA",
+    "status": "Job Openings",
+    "skills": [
+      "CSS",
+      "React"
+    ]
+  },
+  {
+    "id": 76,
+    "title": "System Administrator",
+    "salary": "\u20b91822746 per year",
+    "location": "Singapore",
+    "status": "Job Openings",
+    "skills": [
+      "Docker",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 77,
+    "title": "Software Engineer",
+    "salary": "\u20b9332834 per year",
+    "location": "London, UK",
+    "status": "Job Openings",
+    "skills": [
+      "Docker",
+      "TypeScript",
+      "Node.js",
+      "TensorFlow"
+    ]
+  },
+  {
+    "id": 78,
+    "title": "Cybersecurity Analyst",
+    "salary": "\u20b92640649 per year",
+    "location": "Amsterdam, Netherlands",
+    "status": "Job Openings",
+    "skills": [
+      "HTML",
+      "Azure",
+      "Linux",
+      "Figma",
+      "TensorFlow"
+    ]
+  },
+  {
+    "id": 79,
+    "title": "Frontend Developer",
+    "salary": "\u20b93821927 per year",
+    "location": "Singapore",
+    "status": "Job Openings",
+    "skills": [
+      "Kubernetes",
+      "TensorFlow",
+      "HTML",
+      "React"
+    ]
+  },
+  {
+    "id": 80,
+    "title": "Data Scientist",
+    "salary": "\u20b91420478 per year",
+    "location": "Dubai, UAE",
+    "status": "Job Openings",
+    "skills": [
+      "SQL",
+      "JavaScript",
+      "TypeScript",
+      "Docker"
+    ]
+  },
+  {
+    "id": 81,
+    "title": "DevOps Engineer",
+    "salary": "\u20b93426957 per year",
+    "location": "Amsterdam, Netherlands",
+    "status": "Job Openings",
+    "skills": [
+      "Express.js",
+      "Docker",
+      "CSS",
+      "Linux"
+    ]
+  },
+  {
+    "id": 82,
+    "title": "Game Developer",
+    "salary": "\u20b9930695 per year",
+    "location": "Delhi, India",
+    "status": "Job Openings",
+    "skills": [
+      "Docker",
+      "JavaScript",
+      "Python",
+      "Express.js",
+      "SQL"
+    ]
+  },
+  {
+    "id": 83,
+    "title": "Software Engineer",
+    "salary": "\u20b94019767 per year",
+    "location": "Amsterdam, Netherlands",
+    "status": "Job Openings",
+    "skills": [
+      "CSS",
+      "CI/CD",
+      "TensorFlow"
+    ]
+  },
+  {
+    "id": 84,
+    "title": "Mobile App Developer",
+    "salary": "\u20b9456291 per year",
+    "location": "Mumbai, India",
+    "status": "Job Openings",
+    "skills": [
+      "AWS",
+      "Docker",
+      "Figma",
+      "CI/CD",
+      "Flutter"
+    ]
+  },
+  {
+    "id": 85,
+    "title": "Technical Writer",
+    "salary": "\u20b91170771 per year",
+    "location": "Bangalore, India",
+    "status": "Job Openings",
+    "skills": [
+      "AWS",
+      "Linux",
+      "TensorFlow",
+      "Docker"
+    ]
+  },
+  {
+    "id": 86,
+    "title": "Game Developer",
+    "salary": "\u20b94191555 per year",
+    "location": "Hyderabad, India",
+    "status": "Job Openings",
+    "skills": [
+      "Linux",
+      "Figma",
+      "SQL",
+      "CI/CD"
+    ]
+  },
+  {
+    "id": 87,
+    "title": "Cybersecurity Analyst",
+    "salary": "\u20b9836263 per year",
+    "location": "Sydney, Australia",
+    "status": "Job Openings",
+    "skills": [
+      "CI/CD",
+      "Flutter"
+    ]
+  },
+  {
+    "id": 88,
+    "title": "Game Developer",
+    "salary": "\u20b9983902 per year",
+    "location": "Bangalore, India",
+    "status": "Job Openings",
+    "skills": [
+      "CI/CD",
+      "Docker",
+      "Node.js"
+    ]
+  },
+  {
+    "id": 89,
+    "title": "DevOps Engineer",
+    "salary": "\u20b91513015 per year",
+    "location": "Pune, India",
+    "status": "Job Openings",
+    "skills": [
+      "Azure",
+      "TensorFlow"
+    ]
+  },
+  {
+    "id": 90,
+    "title": "Cybersecurity Analyst",
+    "salary": "\u20b91726881 per year",
+    "location": "Pune, India",
+    "status": "Job Openings",
+    "skills": [
+      "Linux",
+      "Express.js"
+    ]
+  },
+  {
+    "id": 91,
+    "title": "DevOps Engineer",
+    "salary": "\u20b93923920 per year",
+    "location": "Bangalore, India",
+    "status": "Trending",
+    "skills": [
+      "SQL",
+      "Kubernetes",
+      "Figma",
+      "Node.js",
+      "Linux"
+    ]
+  },
+  {
+    "id": 92,
+    "title": "Data Scientist",
+    "salary": "\u20b91927678 per year",
+    "location": "Toronto, Canada",
+    "status": "Trending",
+    "skills": [
+      "Linux",
+      "Figma",
+      "Kubernetes",
+      "AWS",
+      "HTML"
+    ]
+  },
+  {
+    "id": 93,
+    "title": "Cloud Architect",
+    "salary": "\u20b92061621 per year",
+    "location": "Sydney, Australia",
+    "status": "Trending",
+    "skills": [
+      "Azure",
+      "GCP"
+    ]
+  },
+  {
+    "id": 94,
+    "title": "Software Engineer",
+    "salary": "\u20b92597639 per year",
+    "location": "Dubai, UAE",
+    "status": "Trending",
+    "skills": [
+      "HTML",
+      "Node.js",
+      "Express.js",
+      "Docker",
+      "Figma"
+    ]
+  },
+  {
+    "id": 95,
+    "title": "Technical Writer",
+    "salary": "\u20b93675872 per year",
+    "location": "Singapore",
+    "status": "Trending",
+    "skills": [
+      "Express.js",
+      "React"
+    ]
+  },
+  {
+    "id": 96,
+    "title": "Data Scientist",
+    "salary": "\u20b9328784 per year",
+    "location": "Toronto, Canada",
+    "status": "Trending",
+    "skills": [
+      "CI/CD",
+      "CSS",
+      "Python",
+      "Docker"
+    ]
+  },
+  {
+    "id": 97,
+    "title": "Network Engineer",
+    "salary": "\u20b92037532 per year",
+    "location": "Singapore",
+    "status": "Trending",
+    "skills": [
+      "CSS",
+      "Docker"
+    ]
+  },
+  {
+    "id": 98,
+    "title": "Cloud Architect",
+    "salary": "\u20b91353909 per year",
+    "location": "Dubai, UAE",
+    "status": "Trending",
+    "skills": [
+      "Linux",
+      "HTML",
+      "CSS"
+    ]
+  },
+  {
+    "id": 99,
+    "title": "Blockchain Developer",
+    "salary": "\u20b93183045 per year",
+    "location": "San Francisco, USA",
+    "status": "Trending",
+    "skills": [
+      "CSS",
+      "SQL",
+      "Flutter",
+      "Node.js"
+    ]
+  },
+  {
+    "id": 100,
+    "title": "QA Engineer",
+    "salary": "\u20b93899752 per year",
+    "location": "London, UK",
+    "status": "Trending",
+    "skills": [
+      "Linux",
+      "TypeScript"
+    ]
+  },
+  {
+    "id": 101,
+    "title": "DevOps Engineer",
+    "salary": "\u20b9615260 per year",
+    "location": "Tokyo, Japan",
+    "status": "Trending",
+    "skills": [
+      "TypeScript",
+      "HTML",
+      "AWS",
+      "React",
+      "Figma"
+    ]
+  },
+  {
+    "id": 102,
+    "title": "Full Stack Developer",
+    "salary": "\u20b91189918 per year",
+    "location": "Hyderabad, India",
+    "status": "Trending",
+    "skills": [
+      "Kubernetes",
+      "CSS",
+      "Express.js",
+      "JavaScript",
+      "Node.js"
+    ]
+  },
+  {
+    "id": 103,
+    "title": "Data Scientist",
+    "salary": "\u20b91433882 per year",
+    "location": "Sydney, Australia",
+    "status": "Trending",
+    "skills": [
+      "CI/CD",
+      "Flutter",
+      "Azure"
+    ]
+  },
+  {
+    "id": 104,
+    "title": "Network Engineer",
+    "salary": "\u20b92198028 per year",
+    "location": "Mumbai, India",
+    "status": "Trending",
+    "skills": [
+      "HTML",
+      "CSS",
+      "Flutter",
+      "Figma"
+    ]
+  },
+  {
+    "id": 105,
+    "title": "Full Stack Developer",
+    "salary": "\u20b92371447 per year",
+    "location": "Sydney, Australia",
+    "status": "Trending",
+    "skills": [
+      "Flutter",
+      "GCP",
+      "Azure"
+    ]
+  },
+  {
+    "id": 106,
+    "title": "QA Engineer",
+    "salary": "\u20b92017821 per year",
+    "location": "San Francisco, USA",
+    "status": "Trending",
+    "skills": [
+      "Linux",
+      "AWS"
+    ]
+  }
 ]

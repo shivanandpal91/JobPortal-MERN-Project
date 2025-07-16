@@ -1,8 +1,28 @@
-import React ,{useState}from 'react'
+import React ,{useState,useEffect}from 'react'
 import { useForm } from "react-hook-form"
 import CreatableSelect from 'react-select/creatable';
+import { useNavigate } from 'react-router-dom';
+import Profile from '../Components/Profile';
+import { handleError,handleSuccess } from '../utils';
+import { ToastContainer } from 'react-toastify';
 
 const CreateJob = () => {
+    const [loggedInUser, setLoggedInUser] = useState('');
+    const [products, setProducts] = useState('');
+    const navigate = useNavigate();
+      useEffect(() => {
+          setLoggedInUser(localStorage.getItem('loggedInUser'))
+      }, [])
+  
+      const handleLogout = (e) => {
+          localStorage.removeItem('token');
+          localStorage.removeItem('loggedInUser');
+          localStorage.removeItem('loggedInUserEmail');
+          handleSuccess('User Loggedout');
+          setTimeout(() => {
+              navigate('/login');
+          }, 1000)
+      }
     const[selectedOption,setSelectedOption]=useState(null);
     const {
         register,
@@ -13,15 +33,17 @@ const CreateJob = () => {
       const onSubmit = async (data) => {
         data.skills=selectedOption;
         console.log(data)
-        const response=await fetch("http://localhost:3000/post-job",{
+        const response=await fetch("http://localhost:8080/post-job",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(data)
         }).then(res=>res.json()).then((result)=>{
              console.log(result)
              if(result.acknowledged===true){
-                alert("JOB posted successfully")
-                
+                handleSuccess('Job Posted Successfully');
+                setTimeout(() => {
+                    navigate('/my-job');
+                }, 1000)
              }
              reset();
         })
@@ -44,120 +66,127 @@ const CreateJob = () => {
     ]
   
     return (
-    <div className="mac-w-screen-2xl container mx-auto xl:px-24 px-4">
-        <div className='bg-slate-300 py-10 px-4 lg:px-16'>
-        {/* form*/ }
-            <form onSubmit={handleSubmit(onSubmit)} className='space-y-5'>
-            {/*first row */}
-            <div className='create-job-flex'>
-                <div className='lg:w-1/2 w-full'>
-                    <label className='block mb-2 text-lg'>Job Title</label>
-                    <input type='text' defaultValue={"Web Developer"} {...register("JobTitle")} className='create-job-input'></input>
-                </div>
-                <div className='lg:w-1/2 w-full'>
-                    <label className='block mb-2 text-lg'>Company Name</label>
-                    <input type='text' placeholder="Ex: Microsoft" {...register("companyName")} className='create-job-input'></input>
-                </div>
+    <div>
+      <Profile loggedInUser={loggedInUser} handleLogout={handleLogout} />
+      <div className="max-w-screen-2xl container mx-auto xl:px-24 px-4">
+        <h1 className="text-3xl md:text-4xl font-bold text-center text-indigo-700 my-6">Post Your Own Job</h1>
+
+        <div className='bg-gradient-to-br from-indigo-100 via-white to-purple-100 shadow-xl rounded-xl py-10 px-4 lg:px-16'>
+          {/* form */}
+          <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
+
+            {/* first row */}
+            <div className='create-job-flex gap-6'>
+              <div className='lg:w-1/2 w-full'>
+                <label className='block mb-2 text-md font-medium'>Job Title</label>
+                <input type='text' defaultValue={"Web Developer"} {...register("jobTitle")} className='create-job-input' />
+              </div>
+              <div className='lg:w-1/2 w-full'>
+                <label className='block mb-2 text-md font-medium'>Company Name</label>
+                <input type='text' placeholder="Ex: Microsoft" {...register("companyName")} className='create-job-input' />
+              </div>
             </div>
 
-            {/*second row */}
-            <div className='create-job-flex'>
-                <div className='lg:w-1/2 w-full'>
-                    <label className='block mb-2 text-lg'>Minimum Salary</label>
-                    <input type='text' placeholder=' 20k' {...register("minPrice")} className='create-job-input'></input>
-                </div>
-                <div className='lg:w-1/2 w-full'>
-                    <label className='block mb-2 text-lg'>Maximum Salary </label>
-                    <input type='text' placeholder="120k" {...register("maxPrice")} className='create-job-input'></input>
-                </div>
+            {/* second row */}
+            <div className='create-job-flex gap-6'>
+              <div className='lg:w-1/2 w-full'>
+                <label className='block mb-2 text-md font-medium'>Minimum Salary</label>
+                <input type='text' placeholder='20k' {...register("minPrice")} className='create-job-input' />
+              </div>
+              <div className='lg:w-1/2 w-full'>
+                <label className='block mb-2 text-md font-medium'>Maximum Salary</label>
+                <input type='text' placeholder="120k" {...register("maxPrice")} className='create-job-input' />
+              </div>
             </div>
 
-            {/*3rd row */}
-            
-            <div className='create-job-flex'>
-                <div className='lg:w-1/2 w-full'>
-                    <label className='block mb-2 text-lg'>Salary Type</label>
-                    <select name="test" {...register("salaryType")}  className='create-job-input'>
-                        <option value="">Choose Your Salary</option>
-                        <option value="Hourly">Hourly</option>
-                        <option value="Monthly">Monthly</option>
-                        <option value="Yearly">Yearly</option>
-                    </select>
-                </div>
-                <div className='lg:w-1/2 w-full'>
-                    <label className='block mb-2 text-lg'>Job Location</label>
-                    <input type='text' placeholder="Ex: London" {...register("jobLocation")} className='create-job-input'></input>
-                </div>
-            </div>
-            
-            {/*4th row */}
-
-            <div className='create-job-flex'>
-                <div className='lg:w-1/2 w-full'>
-                    <label className='block mb-2 text-lg'>Posting Date</label>
-                    <input type='date' placeholder='ex: 2024-04-17' {...register("postingDate")} className='create-job-input'></input>
-                </div>
-                <div className='lg:w-1/2 w-full'>
-                    <label className='block mb-2 text-lg'>Experience Level</label>
-                    <select name="test" {...register("experienceLevel")}  className='create-job-input'>
-                        
-                        <option value=""> Choose Your Experience</option>
-                        <option value="No Experience">No Experience</option>
-                        <option value="Internship">Internship</option>
-                        <option value="Work remotely">Work remotely</option>
-                        
-                    </select>
-                </div>
+            {/* third row */}
+            <div className='create-job-flex gap-6'>
+              <div className='lg:w-1/2 w-full'>
+                <label className='block mb-2 text-md font-medium'>Salary Type</label>
+                <select {...register("salaryType")} className='create-job-input'>
+                  <option value="">Choose Salary Type</option>
+                  <option value="Hourly">Hourly</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Yearly">Yearly</option>
+                </select>
+              </div>
+              <div className='lg:w-1/2 w-full'>
+                <label className='block mb-2 text-md font-medium'>Job Location</label>
+                <input type='text' placeholder="Ex: London" {...register("jobLocation")} className='create-job-input' />
+              </div>
             </div>
 
-            {/*5th row */}
+            {/* fourth row */}
+            <div className='create-job-flex gap-6'>
+              <div className='lg:w-1/2 w-full'>
+                <label className='block mb-2 text-md font-medium'>Posting Date</label>
+                <input type='date' {...register("postingDate")} className='create-job-input' />
+              </div>
+              <div className='lg:w-1/2 w-full'>
+                <label className='block mb-2 text-md font-medium'>Experience Level</label>
+                <select {...register("experienceLevel")} className='create-job-input'>
+                  <option value="">Choose Experience Level</option>
+                  <option value="No Experience">No Experience</option>
+                  <option value="Internship">Internship</option>
+                  <option value="Work remotely">Work remotely</option>
+                </select>
+              </div>
+            </div>
+
+            {/* fifth row */}
             <div>
-            <label className='block mb-2 text-lg'> Required Skills</label>
-                <CreatableSelect  defaultValue={selectedOption} onChange={setSelectedOption} isMulti options={options} className='create-job-input'/>
+              <label className='block mb-2 text-md font-medium'>Required Skills</label>
+              <CreatableSelect
+                defaultValue={selectedOption}
+                onChange={setSelectedOption}
+                isMulti
+                options={options}
+                className='rounded border shadow-sm'
+              />
             </div>
 
-            
-            {/*6th row */}
-            <div className='create-job-flex'>
-                <div className='lg:w-1/2 w-full'>
-                    <label className='block mb-2 text-lg'>Company Logo</label>
-                    <input type='url' placeholder='paste your company logo url: https://image.com/img1/ ' {...register("companyLogo")} className='create-job-input'></input>
-                </div>
-                <div className='lg:w-1/2 w-full'>
-                    <label className='block mb-2 text-lg'>Employment Type</label>
-                    <select name="test" {...register("employmentType")}  className='create-job-input'>
-                        
-                        <option value="">Choose Employment type</option>
-                        <option value="Temporary">Temporary</option>
-                        <option value="Full-time">Full-time</option>
-                        <option value="Part-time">Part-time</option>
-                        
-                    </select>
-                </div>
+            {/* sixth row */}
+            <div className='create-job-flex gap-6'>
+              <div className='lg:w-1/2 w-full'>
+                <label className='block mb-2 text-md font-medium'>Company Logo</label>
+                <input type='url' placeholder='Paste your logo URL' {...register("companyLogo")} className='create-job-input' />
+              </div>
+              <div className='lg:w-1/2 w-full'>
+                <label className='block mb-2 text-md font-medium'>Employment Type</label>
+                <select {...register("employmentType")} className='create-job-input'>
+                  <option value="">Choose Employment Type</option>
+                  <option value="Temporary">Temporary</option>
+                  <option value="Full-time">Full-time</option>
+                  <option value="Part-time">Part-time</option>
+                </select>
+              </div>
             </div>
 
-            {/* 7th row*/ }
-            <div className='w-full'>
-                <label className='block mb-2 text-lg'>Job Description</label>
-                <textarea  className='w-full pl-3 py-1.5 focus:outline-none placeholder:text-gray-700'
-                row={6}
+            {/* seventh row */}
+            <div>
+              <label className='block mb-2 text-md font-medium'>Job Description</label>
+              <textarea
+                rows={6}
                 defaultValue={"demo text"}
                 placeholder="Job description"
-                {...register("description")} />
-
+                {...register("description")}
+                className='w-full border p-3 rounded shadow-sm focus:outline-none placeholder:text-gray-700'
+              />
             </div>
 
-            {/*last row*/ }
+            {/* last row */}
             <div>
-                <label className='block mb-2 text-lg'>Job Posted By</label>
-                <input type='email' placeholder=' your email:abcxyz123@gmail.com ' {...register("postedBy")} className='create-job-input'></input>
+              <label className='block mb-2 text-md font-medium'>Job Posted By</label>
+              <input type='email' placeholder='Your email: abcxyz123@gmail.com' {...register("postedBy")} className='create-job-input' />
             </div>
 
-            <input type="submit" className='block mt-12 bg-blue-700 text-white font-semibold px-8 py-2 rounded-sm cursor-pointer'/>
-            </form>
+            <input type="submit" value="Submit Job" className='mt-8 bg-blue-700 hover:bg-blue-800 text-white font-semibold px-8 py-3 rounded shadow-md cursor-pointer transition duration-200' />
+          </form>
         </div>
+      </div>
+      <ToastContainer />
     </div>
-  )
-}
+  );
+};
 
-export default CreateJob
+export default CreateJob;

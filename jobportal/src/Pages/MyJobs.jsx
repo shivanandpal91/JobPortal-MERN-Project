@@ -1,8 +1,30 @@
 import {React,useState,useEffect} from 'react'
 import { Link } from 'react-router-dom';
+import Profile from '../Components/Profile';
+import { useNavigate } from 'react-router-dom';
+import { handleError, handleSuccess } from '../utils';
+import { ToastContainer } from 'react-toastify';
 
 const MyJobs = () => {
   // const eamil =""
+    const userEmail = localStorage.getItem("loggedInUserEmail");
+
+    const [loggedInUser, setLoggedInUser] = useState('');
+    const [products, setProducts] = useState('');
+    const navigate = useNavigate();
+      useEffect(() => {
+          setLoggedInUser(localStorage.getItem('loggedInUser'))
+      }, [])
+  
+      const handleLogout = (e) => {
+          localStorage.removeItem('token');
+          localStorage.removeItem('loggedInUser');
+          localStorage.removeItem('loggedInUserEmail');
+          handleSuccess('User Loggedout');
+          setTimeout(() => {
+              navigate('/login');
+          }, 1000)
+      }
   const [jobs,setJobs]=useState([]);
   const [searchText,setSearchText]=useState("");
   const [isLoading,setIsLoading]=useState(true);
@@ -13,8 +35,8 @@ const MyJobs = () => {
   const itemsPerPage =4;
   useEffect(() =>{
       setIsLoading(true);
-      // fetch("http://localhost:3000/myJobs/abc@gmail.com")
-      fetch("../public/jobs.json")
+      fetch(`http://localhost:8080/myJobs/${userEmail}`)
+      // fetch("../public/jobs.json")
       .then(res=>res.json())
       .then(data=>{setJobs(data);
         setIsLoading(false);
@@ -26,7 +48,7 @@ const indexOfLastItem=currentPage*itemsPerPage;
 const indexOfFirstItem=indexOfLastItem-itemsPerPage;
 const currentJobs=jobs.slice(indexOfFirstItem,indexOfLastItem);
  
-/////next button and previos button
+/////next button and previous button
  
 let nextPage=()=>{
   if(indexOfLastItem<jobs.length){
@@ -46,7 +68,7 @@ let prevPage=()=>{
         if (job.jobTitle && typeof job.jobTitle === 'string') {
           // console.log(job)
           return job.jobTitle.toLowerCase().indexOf(searchText.toLowerCase()) !== -1
-        //   // Convert both jobTitle and searchText to lowercase for case-insensitive comparison
+      // Convert both jobTitle and searchText to lowercase for case-insensitive comparison
         //   return job.jobTitle.toLowerCase().indexOf(searchText.toLowerCase()) !== -1;
         }
         return false;
@@ -59,128 +81,129 @@ let prevPage=()=>{
   // console.log(searchText);
  const handleDelete=(id)=>{
    console.log(id);
-   fetch(`http://localhost:3000/job/${id}`,{
+   fetch(`http://localhost:8080/job/${id}`,{
       method:"DELETE"
    }).then((res)=>res.json()).then((data)=>{
     if(data.acknowledged===true){
-      alert("JOB Deleted successfully")
-      
+      handleSuccess('JOB Deleted successfully');
+        setTimeout(() => {
+            navigate('/my-job');
+        }, 1000)
    }
    })
  }
 
   return (
-    <div className="max-w-screen-2xl bg-slate-200 container mx-auto xl:px-24 px-4">
-      <div className='my-jobs-container'>
-         <h1 className='text-center p-4'>All Jobs Posted By Me</h1>
-          <div className='search-box p-2 text-center mb-2 '>
-            <input  onChange={(e)=>setSearchText(e.target.value)} type ='text' name='search' id='search' className='py-2 pl-3 border focus:outline:none lg:w-6/12 mb-4 w-full'/>
-            <button className='bg-blue-800 text-white font-semibold px-8 py-2 rounded-sm mb-4' onClick={handleClick}> Search</button>
+    <div>
+      <Profile loggedInUser={loggedInUser} handleLogout={handleLogout} />
 
+      <div className="max-w-screen-2xl container mx-auto bg-gradient-to-br from-indigo-50 via-white to-purple-100 xl:px-24 px-4 py-10">
+        <div className='my-jobs-container'>
+          <h1 className="text-3xl md:text-4xl font-bold text-center text-indigo-700 my-6">List Of Jobs Posted By You</h1>
+
+          <div className='search-box p-2 text-center mb-2'>
+            <input
+              onChange={(e) => setSearchText(e.target.value)}
+              type='text'
+              name='search'
+              id='search'
+              className='py-2 pl-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 lg:w-6/12 mb-4 w-full rounded shadow-sm'
+              placeholder="Search jobs by title..."
+            />
+            <button
+              className='bg-blue-700 hover:bg-blue-800 text-white font-semibold px-8 py-2 rounded shadow-md transition duration-200'
+              onClick={handleClick}
+            >
+              Search
+            </button>
           </div>
-      
-      </div>
+        </div>
 
-      {/*jobs table filtyered on basis of my email and the websearch*/}
-      <div>
-      <section className="py-1 bg-blueGray-50">
-        <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 mx-auto mt-24">
-          <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
-            <div className="rounded-t mb-0 px-4 py-3 border-0">
-              <div className="flex flex-wrap items-center">
-                <div className="relative w-full px-4 max-w-full flex-grow flex-1">
-                  <h3 className="font-semibold text-base text-blueGray-700">ALL JOBS</h3>
-                </div>
-                <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
-                  <Link to="/post-job"  className="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">Post a new Job</Link>
-                </div>
+        {/*jobs table filtyered on basis of my email and the websearch*/}
+        <section className="py-4">
+          <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 mx-auto mt-12">
+            <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg overflow-hidden">
+              <div className="flex justify-between items-center px-6 py-4 border-b bg-indigo-50">
+                <h3 className="font-bold text-lg text-indigo-700">All Jobs</h3>
+                <Link
+                  to="/post-job"
+                  className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold uppercase px-4 py-2 rounded-full shadow-sm transition duration-200"
+                >
+                  Post a new Job
+                </Link>
               </div>
-            </div>
 
-            <div className="block w-full overflow-x-auto">
-              <table className="items-center bg-transparent w-full border-collapse ">
-                <thead>
-                  <tr>
-                    <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                  No.
-                                </th>
-                  <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                  jobTitle
-                                </th>
-                  <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                  Company Name
-                                </th>
-                  <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                  Salary 
-                                </th>
-                  <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                    Edit
-                  </th>
-                  <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                    Delete
-                  </th>
-                  </tr>
-                </thead>
+              <div className="block w-full overflow-x-auto">
+                <table className="min-w-full text-sm text-left text-gray-700">
+                  <thead className="bg-indigo-100 text-indigo-700">
+                    <tr>
+                      <th className="px-6 py-3">No.</th>
+                      <th className="px-6 py-3">Job Title</th>
+                      <th className="px-6 py-3">Company Name</th>
+                      <th className="px-6 py-3">Salary</th>
+                      <th className="px-6 py-3">Edit</th>
+                      <th className="px-6 py-3">Delete</th>
+                    </tr>
+                  </thead>
+
                   {
-                    isLoading?(<p className="flex items-center justify-center h-20">Loading .....</p>)
-                    :(
-                    <tbody>
+                    isLoading ? (
+                      <tbody><tr><td colSpan="6" className="text-center py-10">Loading ....</td></tr></tbody>
+                    ) : (
+                      <tbody>
                         {
-                          currentJobs.map((job,index) =>(
-                          
-                            <tr key={index}>
-                            <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
-                              {index+1}
-                            </th>
-                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-                             {job.jobTitle}
-                            </td>
-                            <td className="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                            {job.companyName}
-                            </td>
-                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                              
-                              ${job.minPrice}-${job.maxPrice}
-                            </td>
-                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                              
-                              <button><Link to={`/edit-job/${job?._id}`}>Edit</Link></button>
-                            </td>
-                            <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                              <button onClick={()=>handleDelete(job._id)} className='bg-red-700  py-2 px-2 text-white rounded-sm '>Delete</button>
-                            </td>
-                          </tr>
-                          )
-                        
-                          )}
-                        </tbody>
+                          currentJobs.map((job, index) => (
+                            <tr key={index} className="hover:bg-indigo-50 transition">
+                              <td className="px-6 py-4 font-medium text-gray-900">{index + 1}</td>
+                              <td className="px-6 py-4">{job.jobTitle}</td>
+                              <td className="px-6 py-4">{job.companyName}</td>
+                              <td className="px-6 py-4">₹{job.minPrice}k - ₹{job.maxPrice}k</td>
+                              <td className="px-6 py-4">
+                                <Link
+                                  to={`/edit-job/${job?._id}`}
+                                  className="text-indigo-600 hover:underline font-medium"
+                                >
+                                  Edit
+                                </Link>
+                              </td>
+                              <td className="px-6 py-4">
+                                <button
+                                  onClick={() => handleDelete(job._id)}
+                                  className="bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded shadow-sm transition duration-200"
+                                >
+                                  Delete
+                                </button>
+                              </td>
+                            </tr>
+                          ))
+                        }
+                      </tbody>
                     )
                   }
-                
-
-              </table>
+                </table>
+              </div>
             </div>
           </div>
-        </div>
 
-
-        {/* PAGINATION */}
-        <div className="flex justify-center text-black space-x-8 mb-8">
-          {
-            currentPage>1 &&(
-              <button className='hover:underline' onClick={prevPage} >Previous</button>
-            )
-          }
-          {
-            indexOfLastItem<jobs.length && (
-              <button className='hover:underline' onClick={nextPage}>Next</button>
-            )
-          }
-        </div>
-      </section>
+          {/* PAGINATION */}
+          <div className="flex justify-center text-black space-x-8 mb-8">
+            {
+              currentPage > 1 && (
+                <button className='hover:underline text-blue-700 font-semibold' onClick={prevPage}>Previous</button>
+              )
+            }
+            {
+              indexOfLastItem < jobs.length && (
+                <button className='hover:underline text-blue-700 font-semibold' onClick={nextPage}>Next</button>
+              )
+            }
+          </div>
+        </section>
       </div>
     </div>
   )
 }
 
 export default MyJobs
+
+

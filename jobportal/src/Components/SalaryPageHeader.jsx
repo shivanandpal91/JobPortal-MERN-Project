@@ -1,14 +1,12 @@
-import React from 'react'
-
-const SalaryPageHeader = ({title,path}) => {
+import React from 'react';
+const SalaryPageHeader = ({ title, path }) => {
   return (
-    <div className='py-2 mt-3 bg-lime-100 rounded flex items-center justify-center'>
-        <div>
-             <h2 className="text-3xl text-blue-900 font-medium mb-1 text-center"> {title}</h2>
-             <p className='text-sm text-center'><a href="/" className='hover:underline'>Home</a>/{path}</p> 
-        </div>
+    <div className="py-8 mt-6 bg-gradient-to-r from-green-200 via-yellow-100 to-blue-200 rounded-md shadow-md text-center">
+      <h2 className="text-4xl font-extrabold text-blue-900 mb-2">{title}</h2>
+      <p className="text-gray-600 text-sm">
+        <a href="/" className="hover:underline text-blue-700">Home</a> / {path}
+      </p>
     </div>
-  )
-}
-
-export default SalaryPageHeader
+  );
+};
+export default SalaryPageHeader;
