@@ -37,7 +37,7 @@ app.use('/newsletter', NewsLetterRouter);
 // console.log(process.env.DB_PASSWORD)
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-const uri=`mongodb+srv://palmanish200:${process.env.DB_PASSWORD}@mernprojectlatest.9sbz61t.mongodb.net/?retryWrites=true&w=majority&appName=mernprojectlatest`;
+const uri=`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@mernprojectlatest.9sbz61t.mongodb.net/?retryWrites=true&w=majority&appName=mernprojectlatest`;
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 
 const client = new MongoClient(uri, {
