@@ -21,12 +21,7 @@ require('./Models/db');
 //   credentials:true,
 //   // optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 // };
-var corsOptions = {
-  origin: 'http://localhost:5173',
-  methods: "GET,POST,PUT,DELETE,OPTIONS",
-  credentials:true,
-  // optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-};
+
 app.use(cors(corsOptions));
 app.use(express.json({ limit: '5mb' })); // or more, if needed
 app.use(express.urlencoded({ extended: true, limit: '5mb' }));
