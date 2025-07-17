@@ -160,7 +160,7 @@ router.patch("/apply/:email", ensureAuthenticated, async (req, res) => {
       <li><strong>Resume:</strong> ${user.resume ? `<a href="${user.resume}">View Resume</a>` : 'N/A'}</li>
     </ul>
 
-    <p>To view your job post: <a href="http://localhost:5173/job/${appliedJob.jobId}">Click here</a></p>
+    <p>To view your job post: <a href="https://job-portal-server-api.vercel.app/${appliedJob.jobId}">Click here</a></p>
 
     <br/>
     <p><em>This is an automated message. Please do not reply to this email.</em></p>
