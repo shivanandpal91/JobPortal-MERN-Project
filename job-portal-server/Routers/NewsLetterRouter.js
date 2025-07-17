@@ -5,7 +5,7 @@ const ensureAuthenticated = require('../Controllers/Auth');
 const sendEmail = require("../Utils/sendEmail");
 
 // POST /subscribe
-router.post('/subscribe', ensureAuthenticated,async (req, res) => {
+router.post('/subscribe',async (req, res) => {
   const { email } = req.body;
 
   if (!email)
