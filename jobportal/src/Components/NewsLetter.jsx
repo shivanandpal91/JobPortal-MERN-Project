@@ -15,7 +15,7 @@ const NewsLetter = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:8080/newsletter/subscribe", {
+      const res = await fetch("https://job-portal-server-api.vercel.app/newsletter/subscribe", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

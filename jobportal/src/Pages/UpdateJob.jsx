@@ -40,7 +40,7 @@ const UpdateJob = () => {
           const onSubmit = async (data) => {
             data.skills=selectedOption;
             console.log(data)
-            const response=await fetch(`http://localhost:8080/update-job/${_id}`,{
+            const response=await fetch(`https://job-portal-server-api.vercel.app/update-job/${_id}`,{
                 method:"PATCH",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify(data)

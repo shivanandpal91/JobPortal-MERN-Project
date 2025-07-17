@@ -32,26 +32,26 @@ const Home = () => {
     }, 1000);
   };
 
-  const fetchProducts = async () => {
-    try {
-      const url = 'http://localhost:8080/products';
-      const headers = {
-        headers: {
-          Authorization: localStorage.getItem('token'),
-        },
-      };
-      const response = await fetch(url, headers);
-      const result = await response.json();
-      console.log(result);
-      setProducts(result);
-    } catch (err) {
-      handleError(err);
-    }
-  };
+  // const fetchProducts = async () => {
+  //   try {
+  //     const url = 'http://localhost:8080/products';
+  //     const headers = {
+  //       headers: {
+  //         Authorization: localStorage.getItem('token'),
+  //       },
+  //     };
+  //     const response = await fetch(url, headers);
+  //     const result = await response.json();
+  //     console.log(result);
+  //     setProducts(result);
+  //   } catch (err) {
+  //     handleError(err);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+  // useEffect(() => {
+  //   fetchProducts();
+  // }, []);
 
   // now create state for filters
 
@@ -80,7 +80,7 @@ const [selectedSalaryType, setSelectedSalaryType] = useState('');
 
   useEffect(() => {
     setIsLoading(true);
-    fetch('http://localhost:8080/alljobs')
+    fetch('https://job-portal-server-api.vercel.app/alljobs')
       .then((res) => res.json())
       .then((data) => {
         setJobs(data);

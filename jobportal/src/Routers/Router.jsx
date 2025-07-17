@@ -37,7 +37,7 @@ const router = createBrowserRouter([
     </PrivateRoute>
   ),
   loader: async ({ params }) => {
-    const res = await fetch("http://localhost:8080/alljobs");
+    const res = await fetch("https://job-portal-server-api.vercel.app/alljobs");
     const data = await res.json();
 
     return data.find(job => String(job._id) === String(params._id));
@@ -48,12 +48,10 @@ const router = createBrowserRouter([
         { path: "/post-job",element:(<PrivateRoute><CreateJob /></PrivateRoute>) },
         { path: "/my-job",element:(<PrivateRoute><MyJobs /></PrivateRoute>) },
         { path: "/salary",element: <SalaryPage />},
-        { path: "/edit-job/:_id",element:(<PrivateRoute><UpdateJob /></PrivateRoute>) ,loader:({params})=>fetch(`http://localhost:8080/alljobs/${params._id}`) },
+        { path: "/edit-job/:_id",element:(<PrivateRoute><UpdateJob /></PrivateRoute>) ,loader:({params})=>fetch(`https://job-portal-server-api.vercel.app/alljobs/${params._id}`) },
       ]
     }
-    // {
-    //    path: "/login",element: <Login />
-    // }
+   
     
   ]);
   export default router;

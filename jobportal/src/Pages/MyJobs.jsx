@@ -35,7 +35,7 @@ const MyJobs = () => {
   const itemsPerPage =4;
   useEffect(() =>{
       setIsLoading(true);
-      fetch(`http://localhost:8080/myJobs/${userEmail}`)
+      fetch(`https://job-portal-server-api.vercel.app/myJobs/${userEmail}`)
       // fetch("../public/jobs.json")
       .then(res=>res.json())
       .then(data=>{setJobs(data);
@@ -81,7 +81,7 @@ let prevPage=()=>{
   // console.log(searchText);
  const handleDelete=(id)=>{
    console.log(id);
-   fetch(`http://localhost:8080/job/${id}`,{
+   fetch(`https://job-portal-server-api.vercel.app/job/${id}`,{
       method:"DELETE"
    }).then((res)=>res.json()).then((data)=>{
     if(data.acknowledged===true){
