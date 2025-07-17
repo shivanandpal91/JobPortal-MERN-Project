@@ -32,26 +32,26 @@ const Home = () => {
     }, 1000);
   };
 
-  const fetchProducts = async () => {
-    try {
-      const url = 'http://localhost:8080/products';
-      const headers = {
-        headers: {
-          Authorization: localStorage.getItem('token'),
-        },
-      };
-      const response = await fetch(url, headers);
-      const result = await response.json();
-      console.log(result);
-      setProducts(result);
-    } catch (err) {
-      handleError(err);
-    }
-  };
+  // const fetchProducts = async () => {
+  //   try {
+  //     const url = 'http://localhost:8080/products';
+  //     const headers = {
+  //       headers: {
+  //         Authorization: localStorage.getItem('token'),
+  //       },
+  //     };
+  //     const response = await fetch(url, headers);
+  //     const result = await response.json();
+  //     console.log(result);
+  //     setProducts(result);
+  //   } catch (err) {
+  //     handleError(err);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+  // useEffect(() => {
+  //   fetchProducts();
+  // }, []);
 
   // now create state for filters
 
