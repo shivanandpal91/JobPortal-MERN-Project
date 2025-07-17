@@ -128,6 +128,21 @@ const [selectedSalaryType, setSelectedSalaryType] = useState('');
     setSelectedTechStack(tech);
   };
 
+  useEffect(() => {
+  setCurrentPage(1);
+}, [
+  query,
+  locationQuery,
+  selectedTechStack,
+  selectedLocation,
+  selectedSalary,
+  selectedSalaryType,
+  selectedDatePosted,
+  selectedExperience,
+  selectedEmploymentType
+]);
+
+
   // calculate the index range for PAGINATION
   const calculatePageRange = () => {
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -150,7 +165,7 @@ const [selectedSalaryType, setSelectedSalaryType] = useState('');
   // main functions for filtering
 
 
-  const filteredData = (jobs, selected, query) => {
+  const filteredData = (jobs, query) => {
     let filteredJobs = jobs;
 
     // filtering input items
@@ -207,64 +222,14 @@ const [selectedSalaryType, setSelectedSalaryType] = useState('');
     }
 
     //slice the data bassed oncurrent page
+    // setCurrentPage(1)
     const { startIndex, endIndex } = calculatePageRange();
     filteredJobs = filteredJobs.slice(startIndex, endIndex);
     return filteredJobs.map((data, i) => <Card key={i} data={data} />);
   };
 
-  // filter on the all radio button one at a time
-  // const filteredData = (jobs, selected, query) => {
-  //   let filteredJobs = jobs;
 
-  //   // filtering input items
-  //   if (query) {
-  //     filteredJobs = filteredItems;
-  //   }
-
-  //   if (locationQuery) {
-  //     filteredJobs = filteredJobs.filter((job) =>
-  //       job.jobLocation.toLowerCase().includes(locationQuery.toLowerCase())
-  //     );
-  //   }
-
-  //   if (selectedTechStack) {
-  //     filteredJobs = filteredJobs.filter((job) =>
-  //       job.skills?.some(
-  //         (skill) =>
-  //           typeof skill?.value === 'string' &&
-  //           skill.value.toLowerCase().includes(selectedTechStack.toLowerCase())
-  //       )
-  //     );
-  //   }
-
-  //   if (selected) {
-  //     filteredJobs = filteredJobs.filter(
-  //       ({
-  //         jobLocation,
-  //         maxPrice,
-  //         experienceLevel,
-  //         salaryType,
-  //         employmentType,
-  //         postingDate,
-  //       }) => {
-  //         return (
-  //           postingDate >= selected ||
-  //           jobLocation.toLowerCase() === selected.toLowerCase() ||
-  //           parseInt(maxPrice) <= parseInt(selected) ||
-  //           experienceLevel.toLowerCase() === selected.toLowerCase() ||
-  //           salaryType.toLowerCase() === selected.toLowerCase() ||
-  //           employmentType.toLowerCase() === selected.toLowerCase()
-  //         );
-  //       }
-  //     );
-  //   }
-  //   //slice the data bassed oncurrent page
-  //   const { startIndex, endIndex } = calculatePageRange();
-  //   filteredJobs = filteredJobs.slice(startIndex, endIndex);
-  //   return filteredJobs.map((data, i) => <Card key={i} data={data} />);
-  // };
-
-  const result = filteredData(jobs, selectedCategory, query);
+  const result = filteredData(jobs, query);
 
   return (
     <div className="bg-gradient-to-br from-indigo-50 to-white min-h-screen pb-10">
